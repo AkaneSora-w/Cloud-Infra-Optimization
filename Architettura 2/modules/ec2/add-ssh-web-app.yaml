@@ -1,0 +1,28 @@
+#cloud-config
+# Add groups to the system
+# Adds the ubuntu group with members 'root' and 'sys'
+# and the empty group hashicorp.
+groups:
+  - ubuntu: [root,sys]
+  - hashicorp
+
+# Add users to the system. Users are added after groups are added.
+users:
+  - default
+  - name: terraform
+    gecos: terraform
+    shell: /bin/bash
+    primary_group: hashicorp
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    lock_passwd: false
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC40jRDkMsRJ9DQ84CDfKN33PEMjOuR4A3EGdeKDaFnYyOnwB6cdJDh0qNvuzc2MG1qMrIYcXU/5IJUuP1Sio9d9eB2spFqz0MTy3Wrdjr6xXejkZzwX9TikCw41IBMYX/oe3vZU8sR4iOKZiKcuJ+11UQXUKy9SOr2C5TecCydo7tfJvVC5OXjDVRtoz7IejRdiYbbB2mgYw2VW4MsAxLz8fzkZbWD8HcY0ZwurZfIJYRZdPKpCbifaAf+L2tVY8yOgWI51Q1c0HKCkJrQkqCNCzcJ3VbgqOpHwDMWs/jGiwcnWF2qyXFDhKfEwQEPY0wPDDb3z2Xw+6aWFF5p1/11IVegmL0eNocm1fNGCVIZzgl/wG0fawchy5CVankxyBbJXci0KIpvSIjKeR/62iGqb35frK1B1HKppzghfh+BeZtOFJE0PmyxDTPdxAZXoNmHrrNDD3iHZdBogXr7/OPBvIMUYUbuoPtYZ+OjgxuAQflVN5OuBqOHe+3spbgY8QU= junhuangchen@outlook.com
+
+# Downloads the golang package
+packages:
+  - golang
+
+# Sets the GOPATH & downloads the demo payload
+runcmd:
+  - sudo apt -y install nginx

@@ -1,0 +1,21 @@
+.terraform
+.terragrunt-cache
+.vscode
+*.tfstate
+*.tfstate.backup
+*.out
+.terragrunt-cache
+.bundle
+.ruby-version
+.terraform.lock.hcl
+terragrunt
+.DS_Store
+mocks/
+.go-version
+.*.sw?
+.idea
+terragrunt.iml
+vendor
+
+/Architettura 1/*.tf
+/Architettura 2/*.tf
