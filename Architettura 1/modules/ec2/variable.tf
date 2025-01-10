@@ -9,7 +9,7 @@ variable "instance_type" {
 	default = "t2.micro" #tipo di istanza di default
 }
 /*
-variable "tag_enviroment" {
+variable "tag_environment" {
 	description = "tag for the instance"
   	type = string
 	default = null

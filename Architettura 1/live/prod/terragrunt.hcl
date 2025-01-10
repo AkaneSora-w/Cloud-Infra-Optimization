@@ -11,10 +11,10 @@ inputs = {
 	instance_type = "t2.micro"
 	/*
 	inst_name = "prod-instance"
-	tag_enviroment = "prod"
+	tag_environment = "prod"
 	*/
 	inst_tags = {
 		Name = "prod-instance"
-		Enviroment = "prod"
+		Environment = "prod"
 	}
 }

@@ -11,10 +11,10 @@ locals {
 }
 
 inputs = {
-	ami_id = "ami-0d64bb532e0502c46"
+	ami_id = "ami-04f87c366aa353bc5"
 	instance_type = "t2.micro"
 	inst_tags = merge(local.common_tags.inputs, 
 		{Name = "prod-instance", 
-		Enviroment = "prod"}
+		Environment = "prod"}
 	)
 }

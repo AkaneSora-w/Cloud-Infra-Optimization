@@ -11,12 +11,12 @@ locals {
 }
 
 inputs = {
-	ami_id = "ami-0d64bb532e0502c46" //valore ami in input
+	ami_id = "ami-04f87c366aa353bc5" //valore ami in input
 	instance_type = "t2.micro"
 	/*aws_region = "eu-west-1"
 	inst_name = "dev-instance-v2"
-	tag_enviroment = "dev"*/
+	tag_environment = "dev"*/
 	inst_tags = merge(local.common_tags.inputs, 
-		{Name = "dev-instance", Enviroment = "dev"})
+		{Name = "dev-instance", Environment = "dev"})
 	
 }

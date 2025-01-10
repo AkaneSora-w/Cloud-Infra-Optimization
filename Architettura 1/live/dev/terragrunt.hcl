@@ -15,7 +15,7 @@ inputs = {
 	instance_type = "t2.micro"
 	/*aws_region = "eu-west-1"
 	inst_name = "dev-instance-v2"
-	tag_enviroment = "dev"*/
+	tag_environment = "dev"*/
 	inst_tags = merge(local.common_tags.inputs, 
-		{Name = "dev-instance", Enviroment = "dev"})
+		{Name = "dev-instance", Environment = "dev"})
 }

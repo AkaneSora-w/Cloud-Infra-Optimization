@@ -18,6 +18,7 @@ resource "aws_route53_record" "acm_validation" {
   ttl             = 60
   type            = each.value.type
   zone_id         = each.value.zone_id
+  # zone_id = aws_route53_zone.r53_zone.zone_id
 }
 
 resource "aws_route53_record" "root" {

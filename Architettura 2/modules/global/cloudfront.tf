@@ -70,12 +70,18 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
       path_pattern = "/${ordered_cache_behavior.value.work_env}/*"
       target_origin_id = "origin-${ordered_cache_behavior.value.work_env}"
 
-      viewer_protocol_policy = "redirect-to-https"
+      # viewer_protocol_policy = "redirect-to-https"
+      viewer_protocol_policy = "allow-all"
 
       allowed_methods = ["GET", "HEAD", "OPTIONS"]
       cached_methods = ["GET", "HEAD", "OPTIONS"]
 
       cache_policy_id = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad"
+
+      function_association {
+        event_type = "viewer-request"
+        function_arn = aws_cloudfront_function.redirect_to_index.arn
+      }
     }
   }
 
@@ -110,4 +116,10 @@ resource "aws_acm_certificate_validation" "acm_valid" {
   provider = aws.virginia
   certificate_arn = aws_acm_certificate.cert.arn
   validation_record_fqdns = [for record in aws_route53_record.acm_validation: record.fqdn]
+}
+
+resource "aws_cloudfront_function" "redirect_to_index" { 
+  name    = "redirect-to-index" 
+  runtime = "cloudfront-js-1.0" 
+  code    = file("./redirect_to_index.js") 
 }

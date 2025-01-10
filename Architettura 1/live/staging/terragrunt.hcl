@@ -11,6 +11,6 @@ inputs = {
 	instance_type = "t2.micro"
 	inst_tags = {
 		Name = "staging-instance"
-		Enviroment = "staging"
+		Environment = "staging"
 	}
 }

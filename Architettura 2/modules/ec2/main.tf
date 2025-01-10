@@ -133,7 +133,7 @@ resource "aws_instance" "prova_instance" {
       var.inst_tags
     /*{
       Name = var.inst_name
-      Enviroment = var.tag_enviroment
+      Environment = var.tag_environment
     }*/
   )
 }
