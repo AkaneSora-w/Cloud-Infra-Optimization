@@ -11,7 +11,7 @@ remote_state {
     address = "https://gitlab.com/api/v4/projects/65932605/terraform/state/${basename(get_terragrunt_dir())}"
     lock_address = "https://gitlab.com/api/v4/projects/65932605/terraform/state/${basename(get_terragrunt_dir())}/lock"
     unlock_address = "https://gitlab.com/api/v4/projects/65932605/terraform/state/${basename(get_terragrunt_dir())}/lock"
-    # username = "AkaneSora"
+    # username = "yourusername"
     # password = get_env("GITLAB_ACCESS_TOKEN", "default-token")
     # lock_method = "POST"
     # unlock_method = "DELETE"
