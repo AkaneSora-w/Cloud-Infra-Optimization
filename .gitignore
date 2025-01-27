@@ -18,3 +18,4 @@ vendor
 
 /Architettura 1/*.tf
 /Architettura 2/*.tf
+tf-cloud-init
