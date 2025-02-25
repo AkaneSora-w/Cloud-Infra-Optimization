@@ -6,34 +6,34 @@ terraform {
 	source = "../../modules/global"
 }
 
-# dependency "dev" {
-# 	config_path = "../dev"
-# 	enabled = true //default is true
-# }
+dependency "dev" {
+	config_path = "../dev"
+	enabled = true //default is true
+}
 
-# dependency "prod" {
-# 	config_path = "../prod"
-# }
+dependency "prod" {
+	config_path = "../prod"
+}
 
-# dependency "staging" {
-# 	config_path = "../staging"
-# }
+dependency "staging" {
+	config_path = "../staging"
+}
 
 inputs = {
-	# ec2_instances = {
-	# 	"dev" = {
-	# 		public_dns = dependency.dev.outputs.public_dns
-	# 		work_env = "dev"
-	# 	},
-	# 	"prod" = {
-	# 		public_dns = dependency.prod.outputs.public_dns
-	# 		work_env = "prod"
-	# 	},
-	# 	"staging" = {
-	# 		public_dns = dependency.staging.outputs.public_dns
-	# 		work_env = "staging"
-	# 	}
-	# }
+	ec2_instances = {
+		"dev" = {
+			public_dns = dependency.dev.outputs.public_dns
+			work_env = "dev"
+		},
+		"prod" = {
+			public_dns = dependency.prod.outputs.public_dns
+			work_env = "prod"
+		},
+		"staging" = {
+			public_dns = dependency.staging.outputs.public_dns
+			work_env = "staging"
+		}
+	}
 }
 
 # locals {
